@@ -24,6 +24,7 @@ const RandomNumber = ({ generatedNumber }: GeneratedNumberProps) => {
           })}
           animateToNumber={generatedNumber}
           fontStyle={styles.generatedNumber}
+          data-testid="animated-number"
         />
       )}
     </>

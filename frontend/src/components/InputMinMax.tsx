@@ -33,23 +33,26 @@ const InputMinMax = ({ setGeneratedNumber }: InputMinMaxProps) => {
 
   return (
     <>
-      <Typography sx={styles.header}>
+      <Typography sx={styles.header} data-testid="header">
         Enter min and max to generate a random number
       </Typography>
       <OutlinedInput
         type="number"
         startAdornment={<InputAdornment position="start">min</InputAdornment>}
         onChange={({ target }) => setMinValue(target.value)}
+        data-testid="min-input"
       />
       <OutlinedInput
         type="number"
         startAdornment={<InputAdornment position="start">max</InputAdornment>}
         onChange={({ target }) => setMaxValue(target.value)}
+        data-testid="max-input"
       />
       <Button
         onClick={() => generateRandomNumber()}
         variant="outlined"
         disabled={!minValue || !maxValue}
+        data-testid="generate-button"
       >
         Generate
       </Button>
