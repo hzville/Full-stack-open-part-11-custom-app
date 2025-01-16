@@ -21,7 +21,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/npm-install
+      - uses: ../.github/actions/npm-install
       - name: build frontend
         run: npm run build
   lint:
@@ -31,7 +31,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/node-install
+      - uses: ../.github/actions/node-install
       - name: run eslint
         run: npm run lint
   unit_test:
@@ -41,6 +41,6 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/node-install
+      - uses: ../.github/actions/node-install
       - name: run unit tests
         run: npm run test
