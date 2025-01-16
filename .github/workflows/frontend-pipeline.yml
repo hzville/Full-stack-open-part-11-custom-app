@@ -14,8 +14,27 @@ on:
       - synchronize
 
 jobs:
-  test_pipeline:
+  build:
     runs-on: ubuntu-20.04
     steps:
-      - name: print test
-        run: echo "hello world"
+      - uses: actions/checkout@v4
+        working-directory: ./frontend
+      - uses: ./.github/actions/npm-install
+      - name: build application
+        run: npm run build
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+        working-directory: ./frontend
+      - uses: ./.github/actions/node-install
+      - name: run eslint
+        run: npm run lint
+  unit-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+        working-directory: ./frontend
+      - uses: ./.github/actions/node-install
+      - name: run unit tests
+        run: npm run test
