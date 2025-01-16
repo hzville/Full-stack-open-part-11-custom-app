@@ -14,27 +14,33 @@ on:
       - synchronize
 
 jobs:
-  build:
+  build_frontend:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-        working-directory: ./frontend
       - uses: ./.github/actions/npm-install
-      - name: build application
+      - name: build frontend
         run: npm run build
   lint:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-        working-directory: ./frontend
       - uses: ./.github/actions/node-install
       - name: run eslint
         run: npm run lint
-  unit-test:
+  unit_test:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-        working-directory: ./frontend
       - uses: ./.github/actions/node-install
       - name: run unit tests
         run: npm run test
