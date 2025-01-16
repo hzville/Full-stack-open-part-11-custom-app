@@ -27,7 +27,7 @@ jobs:
       #     ls -la ../
       #     cd  ../.github/actions/node-install
       #     ls -la
-      - uses: ../.github/actions/node-install
+      - uses: ./.github/actions/node-install
       # - name: build frontend
       #   run: npm run build
   # lint:
