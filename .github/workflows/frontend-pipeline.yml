@@ -22,7 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: print dir
-        run: ls -la
+        run: |
+          ls -la
+          ls -la ../
       # - uses: ../.github/actions/node-install
       # - name: build frontend
       #   run: npm run build
