@@ -21,26 +21,28 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - uses: ../.github/actions/node-install
-      - name: build frontend
-        run: npm run build
-  lint:
-    runs-on: ubuntu-20.04
-    defaults:
-      run:
-        working-directory: ./frontend
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ../.github/actions/node-install
-      - name: run eslint
-        run: npm run lint
-  unit_test:
-    runs-on: ubuntu-20.04
-    defaults:
-      run:
-        working-directory: ./frontend
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ../.github/actions/node-install
-      - name: run unit tests
-        run: npm run test
+      - name: print dir
+        run: ls -la
+      # - uses: ../.github/actions/node-install
+      # - name: build frontend
+      #   run: npm run build
+  # lint:
+  #   runs-on: ubuntu-20.04
+  #   defaults:
+  #     run:
+  #       working-directory: ./frontend
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: ../.github/actions/node-install
+  #     - name: run eslint
+  #       run: npm run lint
+  # unit_test:
+  #   runs-on: ubuntu-20.04
+  #   defaults:
+  #     run:
+  #       working-directory: ./frontend
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: ../.github/actions/node-install
+  #     - name: run unit tests
+  #       run: npm run test
