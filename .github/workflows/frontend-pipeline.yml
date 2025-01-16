@@ -21,7 +21,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - uses: ../.github/actions/npm-install
+      - uses: ../.github/actions/node-install
       - name: build frontend
         run: npm run build
   lint:
