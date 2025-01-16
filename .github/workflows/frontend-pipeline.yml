@@ -16,18 +16,18 @@ on:
 jobs:
   build_frontend:
     runs-on: ubuntu-20.04
-    defaults:
-      run:
-        working-directory: ./frontend
+    # defaults:
+    #   run:
+    #     working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - name: print dir
-        run: |
-          ls -la
-          ls -la ../
-          cd  ../.github/actions/node-install
-          ls -la
-      # - uses: ../.github/actions/node-install
+      # - name: print dir
+      #   run: |
+      #     ls -la
+      #     ls -la ../
+      #     cd  ../.github/actions/node-install
+      #     ls -la
+      - uses: ../.github/actions/node-install
       # - name: build frontend
       #   run: npm run build
   # lint:
