@@ -21,12 +21,11 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      # - name: print dir
-      #   run: |
-      #     ls -la
-      #     ls -la ../
-      #     cd  ../.github/actions/node-install
-      #     ls -la
+      - name: print dir
+        run: |
+          ls -la
+          cd  ..
+          ls -la
       - uses: ./../.github/actions/node-install
       # - name: build frontend
       #   run: npm run build
