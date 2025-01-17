@@ -1,0 +1,55 @@
+name: frontend ci pipeline
+
+on:
+  push:
+    branches:
+      - develop
+
+  pull_request:
+    branches:
+      - master
+      - develop
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  build_frontend:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - name: build frontend
+        run: npm run build
+  lint:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - name: run eslint
+        run: npm run lint
+  unit_test:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - name: run unit tests
+        run: npm run test
