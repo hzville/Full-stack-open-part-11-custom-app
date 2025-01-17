@@ -21,14 +21,12 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - name: print dir
-        run: |
-          ls -la
-          cd  ..
-          ls -la
-      - uses: ./.github/actions/node-install
-      # - name: build frontend
-      #   run: npm run build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - name: build frontend
+        run: npm run build
   # lint:
   #   runs-on: ubuntu-20.04
   #   defaults:
