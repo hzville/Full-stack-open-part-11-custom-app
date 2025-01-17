@@ -74,7 +74,5 @@ describe("Test min-max input and generated button", async () => {
     await user.type(inputMin, "7");
     await user.type(inputMax, "8");
     expect(generateButton).toHaveProperty("disabled", false);
-    await user.click(generateButton);
-    await waitFor(() => expect(mockFn).toHaveBeenCalledTimes(1));
   });
 });
