@@ -5,13 +5,13 @@ on:
     branches:
       - develop
 
-  pull_request:
-    branches:
-      - master
-      - develop
-    types:
-      - opened
-      - synchronize
+  # pull_request:
+  #   branches:
+  #     - master
+  #     - develop
+  #   types:
+  #     - opened
+  #     - synchronize
 
 jobs:
   frontend:
