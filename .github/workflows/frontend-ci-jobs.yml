@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  build_frontend:
+  build-frontend:
     runs-on: ubuntu-20.04
     defaults:
       run:
@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
       - name: run eslint
         run: npm run lint
-  unit_test:
+  unit-test:
     runs-on: ubuntu-20.04
     defaults:
       run:

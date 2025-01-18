@@ -14,7 +14,7 @@ on:
       - synchronize
 
 jobs:
-  frontend:
+  frontend-ci-jobs:
     uses: ./.github/workflows/frontend-ci-jobs.yml
-  backend:
+  backend-ci-jobs:
     uses: ./.github/workflows/backend-ci-jobs.yml
