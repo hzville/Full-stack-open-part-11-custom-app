@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ./github/workflows/frontend-ci-jobs.yml
+      - uses: ./github/workflows/actions/frontend-ci-jobs
   backend-ci-jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ./github/workflows/backend-ci-jobs.yml
+      - uses: ./github/workflows/actions/backend-ci-jobs
