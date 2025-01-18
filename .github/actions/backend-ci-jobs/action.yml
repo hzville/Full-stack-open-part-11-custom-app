@@ -8,5 +8,6 @@ runs:
       shell: bash
       run: npm ci
     - name: build backend
+      working-directory: ./backend
       shell: bash
       run: npm run build
