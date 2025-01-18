@@ -15,6 +15,6 @@ on:
 
 jobs:
   frontend-ci-jobs:
-    uses: ./github/workflows/jobs/frontend-ci-jobs.yml@develop
+    uses: ./github/workflows/jobs/frontend-ci-jobs
   backend-ci-jobs:
-    uses: ./github/workflows/jobs/backend-ci-jobs.yml@develop
+    uses: ./github/workflows/jobs/backend-ci-jobs
