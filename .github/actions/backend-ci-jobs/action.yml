@@ -5,6 +5,7 @@ runs:
   steps:
     - name: Install dependencies
       working-directory: ./backend
+      shell: bash
       run: npm ci
     - name: build backend
       run: npm run build
