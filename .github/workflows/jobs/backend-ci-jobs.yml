@@ -1,37 +1,27 @@
-name: frontend ci pipeline
+name: backend ci pipeline
 
 on:
-  push:
-    branches:
-      - develop
-
-  pull_request:
-    branches:
-      - master
-      - develop
-    types:
-      - opened
-      - synchronize
+  workflow_call:
 
 jobs:
-  build_frontend:
+  build_backend:
     runs-on: ubuntu-20.04
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: ./backend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
       - run: npm ci
-      - name: build frontend
+      - name: build backend
         run: npm run build
   lint:
     runs-on: ubuntu-20.04
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: ./backend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -44,7 +34,7 @@ jobs:
     runs-on: ubuntu-20.04
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: ./backend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

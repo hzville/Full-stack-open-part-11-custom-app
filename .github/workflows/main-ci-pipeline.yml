@@ -1,0 +1,20 @@
+name: main ci pipeline
+
+on:
+  push:
+    branches:
+      - develop
+
+  pull_request:
+    branches:
+      - master
+      - develop
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  frontend-ci-jobs:
+    uses: ./github/workflows/jobs/frontend-ci-jobs.yml
+  backend-ci-jobs:
+    uses: ./github/workflows/jobs/backend-ci-jobs.yml
