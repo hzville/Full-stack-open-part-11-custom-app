@@ -3,7 +3,7 @@ name: backend ci pipeline
 runs:
   using: "composite"
   steps:
-    - name: Install dependencies
+    - name: install dependencies
       working-directory: ./backend
       shell: bash
       run: npm ci

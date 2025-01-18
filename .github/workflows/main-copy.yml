@@ -1,0 +1,18 @@
+name: main ci pipeline
+
+on:
+  push:
+    branches:
+      - develop
+
+  pull_request:
+    branches:
+      - master
+      - develop
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  frontend:
+    uses: ./.github/workflows/test.yml
