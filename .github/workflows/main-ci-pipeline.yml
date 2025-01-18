@@ -5,28 +5,16 @@ on:
     branches:
       - develop
 
-#  pull_request:
-#    branches:
-#      - master
-#      - develop
-#    types:
-#      - opened
-#      - synchronize
+  pull_request:
+    branches:
+      - master
+      - develop
+    types:
+      - opened
+      - synchronize
 
 jobs:
-  frontend-ci-jobs:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - uses: ./.github/actions/frontend-ci-jobs
-  backend-ci-jobs:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - uses: ./.github/actions/backend-ci-jobs
+  frontend:
+    uses: ./.github/workflows/frontend-ci-jobs.yml
+  backend:
+    uses: ./.github/workflows/backend-ci-jobs.yml
