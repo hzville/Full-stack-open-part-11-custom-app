@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-20.04
     defaults:
       run:
-        working-directory: ./test-automation
+        working-directory: ./test_automation
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
