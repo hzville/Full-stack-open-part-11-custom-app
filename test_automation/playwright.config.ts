@@ -53,10 +53,11 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: [
     {
-      command:
-        "npm run build --prefix ../backend && npm run build --prefix ../frontend && npm run start-prod --prefix ../backend",
-      url: "http://127.0.0.1:3000",
-      reuseExistingServer: true,
+      // command:
+      //   "npm run build --prefix ../backend && npm run build --prefix ../frontend && npm run start-prod --prefix ../backend",
+      // url: "http://127.0.0.1:3000",
+      command: "echo test1",
+      reuseExistingServer: false,
     },
   ],
 });
