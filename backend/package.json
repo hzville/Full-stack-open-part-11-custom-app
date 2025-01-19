@@ -7,6 +7,7 @@
   "scripts": {
     "start-prod": "node ./dist/main.js",
     "build": "rm -rf ./dist && tsc --project tsconfig.build.json",
+    "build-ci": "rm -rf ./dist && npm ci && tsc --project tsconfig.build.json",
     "dev": "tsx watch src/main.ts",
     "test": "jest",
     "lint": "eslint"
