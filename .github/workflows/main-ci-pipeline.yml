@@ -18,3 +18,5 @@ jobs:
     uses: ./.github/workflows/frontend-ci-jobs.yml
   backend-ci-jobs:
     uses: ./.github/workflows/backend-ci-jobs.yml
+  playwright-e2e-tests:
+    uses: ./.github/workflows/playwright-e2e-tests.yml
