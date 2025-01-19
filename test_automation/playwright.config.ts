@@ -56,7 +56,7 @@ export default defineConfig({
       command:
         "npm run build-backend && npm run build-frontend && npm run start-prod-server",
       url: "http://127.0.0.1:3000",
-      reuseExistingServer: false,
+      reuseExistingServer: !process.env.CI,
     },
   ],
 });
