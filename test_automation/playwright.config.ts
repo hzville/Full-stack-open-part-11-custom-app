@@ -54,9 +54,8 @@ export default defineConfig({
   webServer: [
     {
       command:
-        "npm run build-ci --prefix ../backend && npm run build-ci --prefix ../frontend && npm run start-prod --prefix ../backend",
-      // command: "npm run start-prod --prefix ../backend",
-      url: "http://127.0.0.1:3000/healthz",
+        "npm run build-backend && npm run build-frontend && npm run start-prod-server",
+      url: "http://127.0.0.1:3000",
       reuseExistingServer: false,
     },
   ],

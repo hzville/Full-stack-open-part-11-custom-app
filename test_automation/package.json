@@ -6,6 +6,9 @@
   },
   "scripts": {
     "test": "playwright test",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "build-backend": "npm run build-ci --prefix ../backend",
+    "build-frontend": "npm run build-ci --prefix ../frontend",
+    "start-prod-server": "npm run start-prod --prefix ../backend"
   }
 }
