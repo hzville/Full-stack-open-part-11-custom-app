@@ -16,16 +16,18 @@ const RandomNumber = ({ generatedNumber }: GeneratedNumberProps) => {
   return (
     <>
       {generatedNumber && (
-        <AnimatedNumbers
-          includeComma
-          transitions={(index) => ({
-            type: "spring",
-            duration: index + 0.3,
-          })}
-          animateToNumber={generatedNumber}
-          fontStyle={styles.generatedNumber}
-          data-testid="animated-number"
-        />
+        <div data-testid="animated-number">
+          <AnimatedNumbers
+            includeComma
+            transitions={(index) => ({
+              type: "spring",
+              duration: index + 0.3,
+            })}
+            animateToNumber={generatedNumber}
+            fontStyle={styles.generatedNumber}
+            data-testid="animated-number"
+          />
+        </div>
       )}
     </>
   );

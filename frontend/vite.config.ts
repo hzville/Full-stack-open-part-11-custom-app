@@ -8,4 +8,8 @@ export default defineConfig({
   test: {
     environment: "jsdom",
   },
+  build: {
+    outDir: "../backend/dist/frontend-build",
+    emptyOutDir: true,
+  },
 });
