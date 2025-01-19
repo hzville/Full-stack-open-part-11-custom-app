@@ -20,8 +20,8 @@ jobs:
         run: npm run build-ci --prefix ../backend
       - name: build frontend prod
         run: npm run build-ci --prefix ../frontend
-      - name: start prod server
-        run: npm run start-prod --prefix ../backend
+      # - name: start prod server
+      # run: npm run start-prod --prefix ../backend
       - name: run playwright e2e tests
         # run: npx playwright test
         run: npm run test
