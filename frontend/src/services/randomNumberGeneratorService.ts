@@ -1,7 +1,6 @@
 import { MinMaxValue } from "../components/types";
 
-const generateRandomNumberApiUrl =
-  "http://localhost:3000/api/generate-random-number";
+const generateRandomNumberApiUrl = "/api/generate-random-number";
 
 const getRandomNumber = async (
   minValue: MinMaxValue,
