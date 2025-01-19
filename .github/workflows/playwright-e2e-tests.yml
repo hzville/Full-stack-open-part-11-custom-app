@@ -16,14 +16,7 @@ jobs:
         run: npm ci
       - name: install playwright browsers
         run: npx playwright install --with-deps
-      # - name: build backend prod
-      #   run: npm run build-ci --prefix ../backend
-      # - name: build frontend prod
-      #   run: npm run build-ci --prefix ../frontend
-      # - name: start prod server
-      # run: npm run start-prod --prefix ../backend
       - name: run playwright e2e tests
-        # run: npx playwright test
         run: npm run test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
