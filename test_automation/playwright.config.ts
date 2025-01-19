@@ -56,7 +56,7 @@ export default defineConfig({
       command:
         "npm run build --prefix ../backend && npm run build --prefix ../frontend && npm run start-prod --prefix ../backend",
       url: "http://127.0.0.1:3000",
-      reuseExistingServer: !process.env.CI,
+      reuseExistingServer: true,
     },
   ],
 });
