@@ -28,3 +28,4 @@ jobs:
       - frontend-ci-jobs
       - backend-ci-jobs
       - playwright-e2e-tests
+    uses: ./.github/workflows/deploy-jobs.yml
