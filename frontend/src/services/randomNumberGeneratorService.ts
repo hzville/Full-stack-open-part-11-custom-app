@@ -1,6 +1,8 @@
 import { MinMaxValue } from "../components/types";
+const env = import.meta.env;
 
-const generateRandomNumberApiUrl = "/api/generate-random-number";
+const generateRandomNumberApiUrl =
+  env.VITE_BACKEND_API_URL || "/api/generate-random-number";
 
 const getRandomNumber = async (
   minValue: MinMaxValue,
