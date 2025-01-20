@@ -6,7 +6,8 @@ on:
 jobs:
   trigger-deployment:
     runs-on: ubuntu-20.04
+    env:
+      render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
     steps:
-      env:
-        render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
-      - run: curl "$render_hook"
+      - name: trigger deployment
+        run: curl "$render_hook"
