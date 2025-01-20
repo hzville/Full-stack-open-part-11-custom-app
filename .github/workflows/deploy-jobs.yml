@@ -11,5 +11,5 @@ jobs:
       test_hook: https://www.google.com/
     steps:
       - name: trigger deployment
-        #run: curl "$render_hook"
-        run: curl "$test_hook"
+        run: curl "$render_hook"
+        # run: curl "$test_hook"
