@@ -9,4 +9,4 @@ jobs:
     steps:
       env:
         render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
-      run: curl "$render_hook"
+      - run: curl "$render_hook"
