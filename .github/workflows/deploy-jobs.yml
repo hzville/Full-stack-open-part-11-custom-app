@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
+      test_hook: https://www.google.com/
     steps:
       - name: trigger deployment
-        run: curl "$render_hook"
+        #run: curl "$render_hook"
+        run: curl "test_hook"
