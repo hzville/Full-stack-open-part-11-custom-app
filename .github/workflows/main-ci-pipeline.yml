@@ -31,4 +31,3 @@ jobs:
     uses: ./.github/workflows/deploy-jobs.yml
     secrets:
       render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
-      dummy_hook: ${{ secrets.DUMMY_RENDER_DEPLOY_HOOK }}
