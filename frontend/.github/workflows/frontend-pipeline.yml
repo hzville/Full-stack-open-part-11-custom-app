@@ -1,0 +1,21 @@
+name: frontend ci pipeline
+
+on:
+  push:
+    branches:
+      - develop
+
+  pull_request:
+    branches:
+      - master
+      - develop
+      types: 
+        - opened 
+        - synchronize
+
+jobs:
+  test_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: print test
+        run: echo "hello world"
