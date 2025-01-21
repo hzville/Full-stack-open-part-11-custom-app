@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: trigger deployment
-        run: echo "$dummy_hook"
+        run: echo ${{ secrets.dummy_hook }}
