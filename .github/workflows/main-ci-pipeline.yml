@@ -29,3 +29,5 @@ jobs:
       - backend-ci-jobs
       - playwright-e2e-tests
     uses: ./.github/workflows/deploy-jobs.yml
+    secrets:
+      render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
