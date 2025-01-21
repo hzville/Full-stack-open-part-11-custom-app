@@ -5,12 +5,10 @@ on:
     secrets:
       render_hook:
         required: true
-      dummy_hook:
-        required: true
 
 jobs:
   trigger-deployment:
     runs-on: ubuntu-20.04
     steps:
       - name: trigger deployment
-        run: echo ${{ secrets.dummy_hook }}
+        run: curl ${{ secrets.render_hook }}
