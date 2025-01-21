@@ -11,7 +11,8 @@ jobs:
       test_hook: https://www.google.com/
       dummy_render_hook: ${{ secrets.DUMMY_RENDER_DEPLOY_HOOK }}
     steps:
-      - name: trigger deployment
+      - name: echo dummy hook
         run: echo dummy hook "$dummy_render_hook"
+      - name: trigger deployment
         run: curl "$dummy_render_hook"
         # run: curl "$test_hook"
