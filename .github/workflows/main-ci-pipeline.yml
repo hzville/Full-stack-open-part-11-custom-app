@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - develop
+      - master
+
 
   pull_request:
     branches:
@@ -23,11 +25,21 @@ jobs:
       - frontend-ci-jobs
       - backend-ci-jobs
     uses: ./.github/workflows/playwright-e2e-tests.yml
-  deploy-new-version-to-render:
+  deploy-new-version-to-staging-environment:
+    if: ${{ github.ref == 'refs/heads/develop' }}
     needs:
       - frontend-ci-jobs
       - backend-ci-jobs
       - playwright-e2e-tests
     uses: ./.github/workflows/deploy-jobs.yml
     secrets:
-      render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
+      render_hook: ${{ secrets.STAGING_RENDER_DEPLOY_HOOK }}
+  deploy-new-version-to-production:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs:
+      - frontend-ci-jobs
+      - backend-ci-jobs
+      - playwright-e2e-tests
+    uses: ./.github/workflows/deploy-jobs.yml
+    secrets:
+      render_hook: ${{ secrets.PRODUCTION_RENDER_DEPLOY_HOOK }}
