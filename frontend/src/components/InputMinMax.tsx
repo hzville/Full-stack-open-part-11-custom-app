@@ -33,7 +33,6 @@ const InputMinMax = ({ setGeneratedNumber }: InputMinMaxProps) => {
 
   return (
     <>
-      <div>DEVELOPMENT version</div>
       <Typography sx={styles.header} data-testid="header">
         Enter min and max to generate a random number
       </Typography>
