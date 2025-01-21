@@ -1,0 +1,14 @@
+name: deploy new version to render
+
+on:
+  workflow_call:
+    secrets:
+      render_hook:
+        required: true
+
+jobs:
+  trigger-deployment:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: trigger deployment
+        run: curl ${{ secrets.render_hook }}

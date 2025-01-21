@@ -23,3 +23,11 @@ jobs:
       - frontend-ci-jobs
       - backend-ci-jobs
     uses: ./.github/workflows/playwright-e2e-tests.yml
+  deploy-new-version-to-render:
+    needs:
+      - frontend-ci-jobs
+      - backend-ci-jobs
+      - playwright-e2e-tests
+    uses: ./.github/workflows/deploy-jobs.yml
+    secrets:
+      render_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
